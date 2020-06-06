@@ -2,6 +2,8 @@
 
 ![Test](https://github.com/Tsuyoshi84/fancy-stop-watch/workflows/Test/badge.svg)
 
+This is a fancy stop watch. You can use this app [here](https://tsuyoshi84.github.io/fancy-stop-watch/).
+
 ## Development
 
 To run on your local computer:
