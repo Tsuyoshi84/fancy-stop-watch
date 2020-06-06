@@ -1,5 +1,7 @@
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
+![Test](https://github.com/Tsuyoshi84/fancy-stop-watch/workflows/Test/badge.svg)
+
 ---
 
 # svelte app
