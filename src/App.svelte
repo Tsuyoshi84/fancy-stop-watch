@@ -6,6 +6,7 @@
 
   let remainingTime = 3;
   let timer = null;
+  let done = false;
 
   function startStopWatch() {
     if (timer !== null) {
@@ -20,6 +21,7 @@
 
     if (remainingTime === 0) {
       clearInterval(timer);
+      done = true;
     }
   }
 </script>
@@ -31,12 +33,30 @@
     max-width: 240px;
     margin: 0 auto;
     height: 100vh;
-    background: linear-gradient(
-      90deg,
-      rgba(10 10 20 / 1) 0%,
-      rgba(20 20 60 / 1) 35%,
-      rgba(30 30 120 / 1) 100%
-    );
+    background-color: #222;
+  }
+
+  main.done {
+    animation: gradient 5s ease-in-out infinite;
+    animation-direction: alternate;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-color: #222;
+    }
+    30% {
+      background-color: #332;
+    }
+    50% {
+      background-color: #842;
+    }
+    80% {
+      background-color: #163;
+    }
+    100% {
+      background-color: #248;
+    }
   }
 
   @media (min-width: 640px) {
@@ -53,7 +73,7 @@
   }
 </style>
 
-<main>
+<main class:done>
   <section>
     {#if timer !== null}
       <div transition:fade={{ duration: 500 }}>
