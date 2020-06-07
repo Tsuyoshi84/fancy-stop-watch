@@ -1,4 +1,6 @@
 <script>
+  import { fly, fade } from "svelte/transition";
+
   import Watch from "./Watch.svelte";
   import StartStopButton from "./StartStopButton.svelte";
 
@@ -49,7 +51,9 @@
 <main>
   <section>
     {#if timer !== null}
-      <Watch time={remainingTime} />
+      <div transition:fade={{ duration: 500 }}>
+        <Watch time={remainingTime} />
+      </div>
     {:else}
       <StartStopButton on:start={startStopWatch} />
     {/if}
