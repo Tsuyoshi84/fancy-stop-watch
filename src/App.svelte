@@ -1,6 +1,14 @@
 <script>
   import Watch from "./Watch.svelte";
-  export let name = "Tsuyoshi";
+  import StartStopButton from "./StartStopButton.svelte";
+
+  let remainingTime = 240;
+
+  function startStopWatch() {
+    setInterval(() => {
+      remainingTime -= 1;
+    }, 1000);
+  }
 </script>
 
 <style>
@@ -11,13 +19,6 @@
     margin: 0 auto;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
-  }
-
   @media (min-width: 640px) {
     main {
       max-width: none;
@@ -26,11 +27,6 @@
 </style>
 
 <main>
-  <h1>Hello {name}!</h1>
-  <p>
-    Visit the
-    <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
-    to learn how to build Svelte apps.
-  </p>
-  <Watch />
+  <Watch time={remainingTime} />
+  <StartStopButton on:start={startStopWatch} />
 </main>
