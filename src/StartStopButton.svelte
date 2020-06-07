@@ -10,21 +10,21 @@
 
 <style>
   button {
-    --color: #fff;
+    --color: #ccc;
 
     color: var(--color);
-    background-color: rgb(0 0 0 / 0.5);
-    border: 1px solid var(--color);
+    background-color: rgb(0 0 0 / 0.7);
+    border: 5px solid var(--color);
+    border-radius: 1rem;
     font-size: 5rem;
     padding: 1.5rem;
-
     transition: all 0.2s ease-in-out;
   }
 
   button:hover {
-    --color: #aaa;
+    --color: #fff;
     cursor: pointer;
-    background-color: rgb(0 0 0 / 0.4);
+    background-color: rgb(0 0 0 / 0.2);
   }
 </style>
 
