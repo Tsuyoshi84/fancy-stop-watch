@@ -1,15 +1,22 @@
 <script>
+  import Number from "./Number.svelte";
+
   export let time = 0;
-  let timeLabel = "";
+
+  let sec1 = 0;
+  let sec2 = 0;
+  let min1 = 0;
+  let min2 = 0;
 
   $: {
     let min = Math.floor(time / 60);
     let sec = time % 60;
 
-    let minLabel = min < 10 ? `0${min}` : `${min}`;
-    let secLabel = sec < 10 ? `0${sec}` : `${sec}`;
+    sec2 = Math.floor(sec / 10);
+    sec1 = sec - sec2 * 10;
 
-    timeLabel = `${minLabel}:${secLabel}`;
+    min2 = Math.floor(min / 10);
+    min1 = min - min2 * 10;
   }
 </script>
 
@@ -17,4 +24,10 @@
 
 </style>
 
-<section>{timeLabel}</section>
+<div>
+  <Number value={min2} />
+  <Number value={min1} />
+  :
+  <Number value={sec2} />
+  <Number value={sec1} />
+</div>

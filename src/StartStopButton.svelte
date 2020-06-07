@@ -15,9 +15,9 @@
     color: var(--color);
     background-color: #222;
     border: 1px solid var(--color);
-    font-size: 4em;
+    font-size: 5em;
 
-    transition: all 0.1s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 
   button:hover {
