@@ -1,4 +1,4 @@
-# Facy stop watch
+# Fancy stop watch
 
 ![Test](https://github.com/Tsuyoshi84/fancy-stop-watch/workflows/Test/badge.svg)
 
