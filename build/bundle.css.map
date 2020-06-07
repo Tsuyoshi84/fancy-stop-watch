@@ -2,11 +2,13 @@
   "version": 3,
   "file": "bundle.css",
   "sources": [
-    "../../App.svelte"
+    "../../App.svelte",
+    "../../StartStopButton.svelte"
   ],
   "sourcesContent": [
-    "<script>\n  import Watch from \"./Watch.svelte\";\n  import StartStopButton from \"./StartStopButton.svelte\";\n\n  let remainingTime = 240;\n\n  function startStopWatch() {\n    setInterval(() => {\n      remainingTime -= 1;\n    }, 1000);\n  }\n</script>\n\n<style>\n  main {\n    text-align: center;\n    padding: 1em;\n    max-width: 240px;\n    margin: 0 auto;\n  }\n\n  @media (min-width: 640px) {\n    main {\n      max-width: none;\n    }\n  }\n</style>\n\n<main>\n  <Watch time={remainingTime} />\n  <StartStopButton on:start={startStopWatch} />\n</main>\n"
+    "<script>\n  import Watch from \"./Watch.svelte\";\n  import StartStopButton from \"./StartStopButton.svelte\";\n\n  let remainingTime = 10;\n  let timer = null;\n\n  function startStopWatch() {\n    timer = setInterval(timerTicked, 1000);\n  }\n\n  function timerTicked() {\n    remainingTime -= 1;\n\n    if (remainingTime === 0) {\n      clearInterval(timer);\n      timer = null;\n    }\n  }\n</script>\n\n<style>\n  main {\n    text-align: center;\n    padding: 1em;\n    max-width: 240px;\n    margin: 0 auto;\n  }\n\n  @media (min-width: 640px) {\n    main {\n      max-width: none;\n    }\n  }\n</style>\n\n<main>\n  <Watch time={remainingTime} />\n  <StartStopButton on:start={startStopWatch} />\n</main>\n",
+    "<script>\n  import { createEventDispatcher } from \"svelte\";\n  let label = \"Start\";\n\n  const dispatch = createEventDispatcher();\n  function handleClick() {\n    dispatch(\"start\", {});\n  }\n</script>\n\n<style>\n  button {\n    --color: #fff;\n\n    color: var(--color);\n    background-color: #222;\n    border: 1px solid var(--color);\n    font-size: 4em;\n\n    transition: all 0.1s ease-in-out;\n  }\n\n  button:hover {\n    --color: #aaa;\n    cursor: pointer;\n    background-color: #111;\n  }\n</style>\n\n<button on:click={handleClick}>{label}</button>\n"
   ],
   "names": [],
-  "mappings": "AAcE,IAAI,eAAC,CAAC,AACJ,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AAChB,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACzB,IAAI,eAAC,CAAC,AACJ,SAAS,CAAE,IAAI,AACjB,CAAC,AACH,CAAC"
+  "mappings": "AAsBE,IAAI,eAAC,CAAC,AACJ,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,GAAG,CACZ,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CAAC,IAAI,AAChB,CAAC,AAED,MAAM,AAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AACzB,IAAI,eAAC,CAAC,AACJ,SAAS,CAAE,IAAI,AACjB,CAAC,AACH,CAAC;ACtBD,MAAM,eAAC,CAAC,AACN,OAAO,CAAE,IAAI,CAEb,KAAK,CAAE,IAAI,OAAO,CAAC,CACnB,gBAAgB,CAAE,IAAI,CACtB,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,IAAI,OAAO,CAAC,CAC9B,SAAS,CAAE,GAAG,CAEd,UAAU,CAAE,GAAG,CAAC,IAAI,CAAC,WAAW,AAClC,CAAC,AAED,qBAAM,MAAM,AAAC,CAAC,AACZ,OAAO,CAAE,IAAI,CACb,MAAM,CAAE,OAAO,CACf,gBAAgB,CAAE,IAAI,AACxB,CAAC"
 }
