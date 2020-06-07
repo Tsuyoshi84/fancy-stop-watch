@@ -16,6 +16,7 @@
     background-color: rgb(0 0 0 / 0.5);
     border: 1px solid var(--color);
     font-size: 5rem;
+    padding: 1.5rem;
 
     transition: all 0.2s ease-in-out;
   }
