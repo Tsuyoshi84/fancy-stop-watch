@@ -13,7 +13,7 @@
     --color: #fff;
 
     color: var(--color);
-    background-color: #222;
+    background-color: rgb(0 0 0 / 0.5);
     border: 1px solid var(--color);
     font-size: 5em;
 
@@ -23,7 +23,7 @@
   button:hover {
     --color: #aaa;
     cursor: pointer;
-    background-color: #111;
+    background-color: rgb(0 0 0 / 0.4);
   }
 </style>
 

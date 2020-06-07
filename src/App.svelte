@@ -4,7 +4,7 @@
   import Watch from "./Watch.svelte";
   import StartStopButton from "./StartStopButton.svelte";
 
-  let remainingTime = 100;
+  let remainingTime = 3;
   let timer = null;
 
   function startStopWatch() {
@@ -20,7 +20,6 @@
 
     if (remainingTime === 0) {
       clearInterval(timer);
-      timer = null;
     }
   }
 </script>
@@ -32,6 +31,12 @@
     max-width: 240px;
     margin: 0 auto;
     height: 100vh;
+    background: linear-gradient(
+      90deg,
+      rgba(10 10 20 / 1) 0%,
+      rgba(20 20 60 / 1) 35%,
+      rgba(30 30 120 / 1) 100%
+    );
   }
 
   @media (min-width: 640px) {
