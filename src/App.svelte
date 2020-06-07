@@ -3,8 +3,9 @@
 
   import Watch from "./Watch.svelte";
   import StartStopButton from "./StartStopButton.svelte";
+  import Footer from "./Footer.svelte";
 
-  let remainingTime = 3;
+  let remainingTime = 240;
   let timer = null;
   let done = false;
 
@@ -29,7 +30,6 @@
 <style>
   main {
     text-align: center;
-    padding: 1em;
     max-width: 240px;
     margin: 0 auto;
     height: 100vh;
@@ -69,7 +69,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: calc(100% - 30px);
   }
 </style>
 
@@ -83,4 +83,6 @@
       <StartStopButton on:start={startStopWatch} />
     {/if}
   </section>
+
+  <Footer />
 </main>
