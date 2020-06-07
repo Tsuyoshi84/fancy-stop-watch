@@ -21,15 +21,49 @@
 </script>
 
 <style>
-  div {
-    font-size: 8em;
+  section {
+    display: flex;
+  }
+
+  @media (max-width: 640px) {
+    section {
+      flex-direction: column;
+    }
+  }
+
+  .time-wrapper {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .unit {
+    font-size: 3rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .number {
+    width: 7rem;
   }
 </style>
 
-<div>
-  <Number value={min2} />
-  <Number value={min1} />
-  :
-  <Number value={sec2} />
-  <Number value={sec1} />
-</div>
+<section>
+  <div class="time-wrapper">
+    <div class="number">
+      <Number value={min2} />
+    </div>
+    <div class="number">
+      <Number value={min1} />
+    </div>
+    <span class="unit">min</span>
+  </div>
+
+  <div class="time-wrapper">
+    <div class="number">
+      <Number value={sec2} />
+    </div>
+    <div class="number">
+      <Number value={sec1} />
+    </div>
+    <span class="unit">sec</span>
+  </div>
+</section>

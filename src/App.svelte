@@ -30,7 +30,6 @@
 <style>
   main {
     text-align: center;
-    max-width: 240px;
     margin: 0 auto;
     height: 100vh;
     background-color: #222;
@@ -59,17 +58,11 @@
     }
   }
 
-  @media (min-width: 640px) {
-    main {
-      max-width: none;
-    }
-  }
-
   section {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100% - 30px);
+    height: calc(100% - 50px);
   }
 </style>
 
