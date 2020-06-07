@@ -28,6 +28,12 @@
 </script>
 
 <style>
+  h1 {
+    padding: 1rem;
+    font-size: 3rem;
+    display: block;
+  }
+
   main {
     text-align: center;
     margin: 0 auto;
@@ -60,6 +66,7 @@
 
   section {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: calc(100% - 50px);
@@ -68,6 +75,8 @@
 
 <main class:done>
   <section>
+    <h1>Fancy Stop Watch</h1>
+
     {#if timer !== null}
       <div transition:fade={{ duration: 500 }}>
         <Watch time={remainingTime} />
