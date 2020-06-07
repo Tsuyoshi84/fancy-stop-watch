@@ -2,12 +2,20 @@
   import Watch from "./Watch.svelte";
   import StartStopButton from "./StartStopButton.svelte";
 
-  let remainingTime = 240;
+  let remainingTime = 10;
+  let timer = null;
 
   function startStopWatch() {
-    setInterval(() => {
-      remainingTime -= 1;
-    }, 1000);
+    timer = setInterval(timerTicked, 1000);
+  }
+
+  function timerTicked() {
+    remainingTime -= 1;
+
+    if (remainingTime === 0) {
+      clearInterval(timer);
+      timer = null;
+    }
   }
 </script>
 
