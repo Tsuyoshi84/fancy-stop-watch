@@ -38,7 +38,6 @@
     text-align: center;
     margin: 0 auto;
     height: 100vh;
-    background-color: #222;
   }
 
   main.done {
@@ -85,6 +84,5 @@
       <StartStopButton on:start={startStopWatch} />
     {/if}
   </section>
-
-  <Footer />
 </main>
+<Footer />
