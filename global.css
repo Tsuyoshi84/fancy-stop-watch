@@ -12,6 +12,14 @@ button {
   font-family: var(--font-family);
 }
 
+a {
+  color: #99f;
+}
+
+a:hover {
+  color: #aaf;
+}
+
 @media (max-width: 640px) {
   html {
     font-size: 10pt;
@@ -26,4 +34,5 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  background-color: #222;
 }
