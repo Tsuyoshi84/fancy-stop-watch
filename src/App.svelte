@@ -2,7 +2,7 @@
   import { fly, fade } from "svelte/transition";
 
   import Watch from "./Watch.svelte";
-  import StartStopButton from "./StartStopButton.svelte";
+  import StartButton from "./StartButton.svelte";
   import Footer from "./Footer.svelte";
 
   let remainingTime = 240;
@@ -81,7 +81,7 @@
         <Watch time={remainingTime} />
       </div>
     {:else}
-      <StartStopButton on:start={startStopWatch} />
+      <StartButton on:start={startStopWatch} />
     {/if}
   </section>
 </main>
