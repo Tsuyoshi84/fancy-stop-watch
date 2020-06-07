@@ -1,9 +1,10 @@
 <script>
-  import { fly, fade } from "svelte/transition";
+  import { fade } from "svelte/transition";
 
   import Watch from "./Watch.svelte";
   import StartButton from "./StartButton.svelte";
   import Footer from "./Footer.svelte";
+  import Title from "./Title.svelte";
 
   let remainingTime = 240;
   let timer = null;
@@ -28,25 +29,6 @@
 </script>
 
 <style>
-  h1 {
-    padding: 1rem;
-    font-size: 3rem;
-    display: block;
-    color: transparent;
-
-    background: linear-gradient(90deg, #aaf, #aaf 50%, #fff 0);
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-size: 200% 100%;
-    background-position: 100%;
-    -webkit-text-fill-color: transparent;
-    transition: background-position 275ms ease;
-  }
-
-  h1:hover {
-    background-position: 0 100%;
-  }
-
   main {
     text-align: center;
     margin: 0 auto;
@@ -87,7 +69,7 @@
 
 <main class:done>
   <section>
-    <h1>Fancy Stop Watch</h1>
+    <Title />
 
     {#if timer !== null}
       <div transition:fade={{ duration: 500 }}>
