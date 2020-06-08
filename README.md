@@ -1,6 +1,6 @@
 # Fancy stop watch
 
-![Test](https://github.com/Tsuyoshi84/fancy-stop-watch/workflows/Test/badge.svg)
+![Build and Deploy](https://github.com/Tsuyoshi84/fancy-stop-watch/workflows/Build%20and%20Deploy/badge.svg)
 
 This is a fancy stop watch. You can use this app [here](https://tsuyoshi84.github.io/fancy-stop-watch/).
 
