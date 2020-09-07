@@ -1,10 +1,10 @@
 <script>
-  import { fade } from "svelte/transition";
+  import { fade } from 'svelte/transition';
 
-  import Watch from "./Watch.svelte";
-  import StartButton from "./StartButton.svelte";
-  import Footer from "./Footer.svelte";
-  import Title from "./Title.svelte";
+  import Watch from './Watch.svelte';
+  import StartButton from './StartButton.svelte';
+  import Footer from './Footer.svelte';
+  import Title from './Title.svelte';
 
   let remainingTime = 240;
   let timer = null;
@@ -69,15 +69,16 @@
 
 <main class:done>
   <section>
-    <Title />
-
     {#if timer !== null}
       <div transition:fade={{ duration: 500 }}>
         <Watch time={remainingTime} />
       </div>
     {:else}
+      <Title />
       <StartButton on:start={startStopWatch} />
     {/if}
   </section>
 </main>
-<Footer />
+{#if timer === null}
+  <Footer />
+{/if}
