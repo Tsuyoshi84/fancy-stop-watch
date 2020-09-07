@@ -4,7 +4,7 @@
 
   export let value = 0;
 
-  const drawConfig = { duration: 1000, delay: 0, easing: quintOut };
+  const drawConfig = { duration: 800, delay: 0, easing: quintOut };
 </script>
 
 <style>
