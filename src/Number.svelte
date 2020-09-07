@@ -1,14 +1,13 @@
 <script>
-  import { draw } from "svelte/transition";
-  import { quintInOut, quintIn } from "svelte/easing";
+  import { draw } from 'svelte/transition';
+  import { quintOut } from 'svelte/easing';
 
   export let value = 0;
 
-  const drawConfig = { duration: 1000, delay: 0, easing: quintInOut };
+  const drawConfig = { duration: 1000, delay: 0, easing: quintOut };
 </script>
 
 <style>
-
 </style>
 
 <svg
