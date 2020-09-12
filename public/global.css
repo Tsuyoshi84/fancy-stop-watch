@@ -20,12 +20,6 @@ a:hover {
   color: #aaf;
 }
 
-@media (max-width: 640px) {
-  html {
-    font-size: 10pt;
-  }
-}
-
 body {
   position: relative;
   width: 100%;

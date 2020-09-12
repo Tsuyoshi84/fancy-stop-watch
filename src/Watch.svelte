@@ -1,5 +1,5 @@
 <script>
-  import Number from "./Number.svelte";
+  import Number from './Number.svelte';
 
   export let time = 0;
 
@@ -21,14 +21,20 @@
 </script>
 
 <style>
-  section {
+  .watch {
     display: flex;
-  }
-
-  @media (max-width: 640px) {
-    section {
-      flex-direction: column;
-    }
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid blue;
+    box-shadow: 0 0 40px 0px blue;
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    max-width: 100vw;
+    max-height: 100vw;
+    animation: blur alternate 5s ease-in-out infinite;
+    animation-delay: 0.2s;
   }
 
   .time-wrapper {
@@ -36,17 +42,31 @@
     align-items: flex-end;
   }
 
-  .unit {
-    font-size: 3rem;
-    padding-bottom: 0.5rem;
-  }
-
   .number {
     width: 7rem;
   }
+
+  @media (max-width: 540px) {
+    .number {
+      width: 23vw;
+    }
+  }
+
+  @keyframes blur {
+    0% {
+      box-shadow: 0 0 2px 0px blue;
+    }
+
+    20% {
+      box-shadow: 0 0 2px 0px blue;
+    }
+    100% {
+      box-shadow: 0 0 40px 10px blue;
+    }
+  }
 </style>
 
-<section>
+<section class="watch">
   <div class="time-wrapper">
     <div class="number">
       <Number value={min2} />
@@ -54,7 +74,6 @@
     <div class="number">
       <Number value={min1} />
     </div>
-    <span class="unit">min</span>
   </div>
 
   <div class="time-wrapper">
@@ -64,6 +83,5 @@
     <div class="number">
       <Number value={sec1} />
     </div>
-    <span class="unit">sec</span>
   </div>
 </section>
