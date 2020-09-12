@@ -3,14 +3,9 @@
     padding: 1rem;
     font-size: 3rem;
     display: block;
-    color: transparent;
-    background: linear-gradient(90deg, #aaf, #aaf 50%, #fff 0);
-    background-clip: text;
-    -webkit-background-clip: text;
-    background-size: 200% 100%;
-    background-position: 100%;
-    -webkit-text-fill-color: transparent;
-    transition: background-position 275ms ease;
+    color: blue;
+    text-shadow: 0 0 10px blue;
+    filter: brightness(3.4);
   }
 
   h1:hover {

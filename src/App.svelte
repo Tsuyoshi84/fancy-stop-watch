@@ -6,7 +6,8 @@
   import Footer from './Footer.svelte';
   import Title from './Title.svelte';
 
-  let remainingTime = 240;
+  const initTime = 240;
+  let remainingTime = initTime;
   let timer = null;
   let done = false;
 
@@ -71,7 +72,7 @@
   <section>
     {#if timer !== null}
       <div transition:fade={{ duration: 500 }}>
-        <Watch time={remainingTime} />
+        <Watch time={remainingTime} {initTime} />
       </div>
     {:else}
       <Title />

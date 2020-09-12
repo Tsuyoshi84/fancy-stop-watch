@@ -2,11 +2,23 @@
   import Number from './Number.svelte';
 
   export let time = 0;
+  export let initTime = 0;
+
+  const maxAngle = 360;
+  const anglePrecision = 3;
+  $: needles = [...Array(maxAngle / anglePrecision).keys()].map((a) => {
+    return { angle: a, on: false };
+  });
 
   let sec1 = 0;
   let sec2 = 0;
   let min1 = 0;
   let min2 = 0;
+
+  function isNeedleOn(angle) {
+    const on = (initTime - time) / initTime > (angle * anglePrecision) / maxAngle;
+    return on;
+  }
 
   $: {
     let min = Math.floor(time / 60);
@@ -17,6 +29,10 @@
 
     min2 = Math.floor(min / 10);
     min1 = min - min2 * 10;
+
+    needles = needles.map((n) => {
+      return { ...n, ...{ on: isNeedleOn(n.angle) } };
+    });
   }
 </script>
 
@@ -56,7 +72,6 @@
     0% {
       box-shadow: 0 0 2px 0px blue;
     }
-
     20% {
       box-shadow: 0 0 2px 0px blue;
     }
@@ -64,9 +79,29 @@
       box-shadow: 0 0 40px 10px blue;
     }
   }
+
+  .needle {
+    position: absolute;
+    width: 4px;
+    height: 40px;
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: transparent;
+    transform: rotate(360deg) translate(0px, -270px);
+    transition: all 2s ease-in-out;
+  }
+
+  .needle.on {
+    background-color: #88f;
+    box-shadow: 0 0 10px 3px #33f;
+  }
 </style>
 
 <section class="watch">
+  {#each needles as needle}
+    <div class="needle" class:on={needle.on} style="transform: rotate({needle.angle * anglePrecision}deg) translate(0px, -270px);" />
+  {/each}
+
   <div class="time-wrapper">
     <div class="number">
       <Number value={min2} />

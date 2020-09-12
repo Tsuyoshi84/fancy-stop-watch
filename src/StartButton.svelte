@@ -1,16 +1,16 @@
 <script>
-  import { createEventDispatcher } from "svelte";
-  let label = "Start";
+  import { createEventDispatcher } from 'svelte';
+  let label = 'Start';
 
   const dispatch = createEventDispatcher();
   function handleClick() {
-    dispatch("start", {});
+    dispatch('start', {});
   }
 </script>
 
 <style>
   button {
-    --color: #ccc;
+    --color: blue;
 
     color: var(--color);
     background-color: rgb(0 0 0 / 0.7);
@@ -22,9 +22,9 @@
   }
 
   button:hover {
-    --color: #fff;
     cursor: pointer;
     background-color: rgb(0 0 0 / 0.2);
+    filter: brightness(2);
   }
 </style>
 
