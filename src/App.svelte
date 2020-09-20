@@ -37,26 +37,8 @@
   }
 
   main.done {
-    animation: gradient 5s ease-in-out infinite;
+    background-color: black;
     animation-direction: alternate;
-  }
-
-  @keyframes gradient {
-    0% {
-      background-color: #222;
-    }
-    30% {
-      background-color: #332;
-    }
-    50% {
-      background-color: #842;
-    }
-    80% {
-      background-color: #163;
-    }
-    100% {
-      background-color: #248;
-    }
   }
 
   section {

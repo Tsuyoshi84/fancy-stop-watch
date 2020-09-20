@@ -13,4 +13,4 @@
   }
 </style>
 
-<h1>Fancy Stop Watch</h1>
+<h1>Gehin Timer</h1>
