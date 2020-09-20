@@ -59,13 +59,8 @@
   }
 
   .number {
-    width: 7rem;
-  }
-
-  @media (max-width: 540px) {
-    .number {
-      width: 23vw;
-    }
+    --number-width: 7rem;
+    width: var(--number-width);
   }
 
   @keyframes blur {
@@ -81,25 +76,38 @@
   }
 
   .needle {
+    --needle-angle: 0deg;
+    --needle-length: -270px;
     position: absolute;
     width: 4px;
     height: 40px;
     border: 1px solid blue;
     border-radius: 5px;
     background-color: transparent;
-    transform: rotate(360deg) translate(0px, -270px);
+    transform: rotate(var(--needle-angle)) translate(0px, var(--needle-length));
     transition: all 2s ease-in-out;
+    transition-delay: -1s;
   }
 
   .needle.on {
     background-color: #88f;
     box-shadow: 0 0 10px 3px #33f;
   }
+
+  @media (max-width: 540px) {
+    .number {
+      --number-width: 23vw;
+    }
+
+    .needle {
+      --needle-length: calc(100vw / 2 * -1 + 30px);
+    }
+  }
 </style>
 
 <section class="watch">
   {#each needles as needle}
-    <div class="needle" class:on={needle.on} style="transform: rotate({needle.angle * anglePrecision}deg) translate(0px, -270px);" />
+    <div class="needle" class:on={needle.on} style="--needle-angle: {needle.angle * anglePrecision}deg" />
   {/each}
 
   <div class="time-wrapper">
