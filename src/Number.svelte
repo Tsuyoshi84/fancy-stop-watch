@@ -10,7 +10,7 @@
 <style>
   .path {
     fill: none;
-    stroke: blue;
+    stroke: #33f;
     stroke-width: 5px;
     stroke-linejoin: round;
   }
