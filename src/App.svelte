@@ -25,6 +25,8 @@
     if (remainingTime === 0) {
       clearInterval(timer);
       done = true;
+
+      document.querySelector('#finish-audio').play();
     }
   }
 </script>
@@ -61,6 +63,11 @@
       <StartButton on:start={startStopWatch} />
     {/if}
   </section>
+
+  <!-- svelte-ignore a11y-media-has-caption -->
+  <audio id="finish-audio" preload loop>
+    <source src="./assets/voice.wav" type="audio/wav" />
+  </audio>
 </main>
 {#if timer === null}
   <Footer />
