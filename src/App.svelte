@@ -26,7 +26,9 @@
       clearInterval(timer);
       done = true;
 
-      document.querySelector('#finish-audio').play();
+      const audio = document.querySelector('#finish-audio');
+      audio.volume = 0.1;
+      audio.play();
     }
   }
 </script>
