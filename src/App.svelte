@@ -1,10 +1,10 @@
 <script>
-  import { fade } from 'svelte/transition';
+  import { fade } from "svelte/transition";
 
-  import Watch from './Watch.svelte';
-  import StartButton from './StartButton.svelte';
-  import Footer from './Footer.svelte';
-  import Title from './Title.svelte';
+  import Watch from "./Watch.svelte";
+  import StartButton from "./StartButton.svelte";
+  import Footer from "./Footer.svelte";
+  import Title from "./Title.svelte";
 
   const initTime = 240;
   let remainingTime = initTime;
@@ -26,7 +26,7 @@
       clearInterval(timer);
       done = true;
 
-      const audio = document.querySelector('#finish-audio');
+      const audio = document.querySelector("#finish-audio");
       audio.volume = 0.1;
       audio.play();
     }
@@ -41,7 +41,6 @@
   }
 
   main.done {
-    background-color: black;
     animation-direction: alternate;
   }
 

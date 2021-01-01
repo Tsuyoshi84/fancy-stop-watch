@@ -1,11 +1,9 @@
 <script>
-  import Number from './Number.svelte';
-
   export let time = 0;
   export let initTime = 0;
 
   const maxAngle = 360;
-  const anglePrecision = 3;
+  const anglePrecision = 6;
   $: needles = [...Array(maxAngle / anglePrecision).keys()].map((a) => {
     return { angle: a, on: false };
   });
@@ -14,11 +12,12 @@
   let sec2 = 0;
   let min1 = 0;
   let min2 = 0;
-  let hueRotateAngle = '0deg';
+  let hueRotateAngle = "0deg";
   let done = false;
 
   function isNeedleOn(angle) {
-    const on = (initTime - time) / initTime > (angle * anglePrecision) / maxAngle;
+    const on =
+      (initTime - time) / initTime > (angle * anglePrecision) / maxAngle;
     return on;
   }
 
@@ -47,12 +46,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 100px 0px #00f;
     border-radius: 50%;
     width: 600px;
     height: 600px;
     max-width: 100vw;
     max-height: 100vw;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   }
 
   .watch.done {
@@ -76,26 +76,25 @@
   .number {
     --number-width: 7rem;
     width: var(--number-width);
+    font-size: 10rem;
+    color: #999;
   }
 
   .needle {
     --needle-angle: 0deg;
     --needle-length: -270px;
-    --needle-border-color: #00f;
     position: absolute;
-    width: 4px;
-    height: 40px;
-    border: 1px solid var(--needle-border-color);
-    border-radius: 5px;
-    background-color: transparent;
+    width: 10px;
+    height: 30px;
+    border-radius: 50%;
     transform: rotate(var(--needle-angle)) translate(0px, var(--needle-length));
     transition: all 2s ease-in-out;
     transition-delay: -1s;
   }
 
   .needle.on {
-    background-color: #88f;
-    box-shadow: 0 0 10px 3px #33f;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 2px 2px 4px #aaaaaa, -2px -2px 4px #ffffff;
   }
 
   .needle.done {
@@ -105,6 +104,7 @@
   @media (max-width: 540px) {
     .number {
       --number-width: 23vw;
+      font-size: 5rem;
     }
 
     .needle {
@@ -115,24 +115,20 @@
 
 <section class="watch" class:done style="--hue-rotate-angle: {hueRotateAngle}">
   {#each needles as needle}
-    <div class="needle" class:done class:on={needle.on} style="--needle-angle: {needle.angle * anglePrecision}deg" />
+    <div
+      class="needle"
+      class:done
+      class:on={needle.on}
+      style="--needle-angle: {needle.angle * anglePrecision}deg" />
   {/each}
 
   <div class="time-wrapper">
-    <div class="number">
-      <Number value={min2} />
-    </div>
-    <div class="number">
-      <Number value={min1} />
-    </div>
+    <div class="number">{min2}</div>
+    <div class="number">{min1}</div>
   </div>
 
   <div class="time-wrapper">
-    <div class="number">
-      <Number value={sec2} />
-    </div>
-    <div class="number">
-      <Number value={sec1} />
-    </div>
+    <div class="number">{sec2}</div>
+    <div class="number">{sec1}</div>
   </div>
 </section>
