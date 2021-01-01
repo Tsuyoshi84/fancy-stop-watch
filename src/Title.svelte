@@ -3,9 +3,7 @@
     padding: 1rem;
     font-size: 3rem;
     display: block;
-    color: blue;
-    text-shadow: 0 0 10px blue;
-    filter: brightness(3.4);
+    color: #666;
   }
 
   h1:hover {
@@ -13,4 +11,4 @@
   }
 </style>
 
-<h1>Gehin Timer</h1>
+<h1>Fancy Timer</h1>

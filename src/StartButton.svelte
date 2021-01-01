@@ -1,31 +1,43 @@
 <script>
-  import { createEventDispatcher } from 'svelte';
-  let label = 'Start';
+  import { createEventDispatcher } from "svelte";
+  let label = "Start";
 
   const dispatch = createEventDispatcher();
   function handleClick() {
-    dispatch('start', {});
+    dispatch("start", {});
   }
 </script>
 
 <style>
   button {
-    --color: #88f;
+    --color: #666;
 
     color: var(--color);
     background-color: rgb(0 0 0 / 0.7);
-    border: 5px solid var(--color);
-    border-radius: 1rem;
-    font-size: 5rem;
+    font-size: 4rem;
     padding: 1.5rem;
     transition: all 0.2s ease-in-out;
-    box-shadow: 0 0 20px 0px blue;
+    border: none;
+    border-radius: 50px;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
   }
 
   button:hover {
     cursor: pointer;
-    background-color: rgb(0 0 0 / 0.2);
-    box-shadow: 0 0 40px 10px blue;
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  }
+
+  button:active,
+  button:focus {
+    cursor: pointer;
+
+    border-radius: 50px;
+    background: #e0e0e0;
+    box-shadow: inset 20px 20px 60px #bebebe, inset -20px -20px 60px #ffffff;
   }
 </style>
 
