@@ -77,7 +77,8 @@
     --number-width: 7rem;
     width: var(--number-width);
     font-size: 10rem;
-    color: #999;
+    color: #adb2ab;
+    text-shadow: 3px 3px 12px #bebebe, -3px -3px 12px #ffffff;
   }
 
   .needle {

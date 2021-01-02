@@ -3,7 +3,8 @@
     padding: 1rem;
     font-size: 3rem;
     display: block;
-    color: #666;
+    color: #999;
+    text-shadow: 3px 3px 6px #bebebe, -3px -3px 6px #ffffff;
   }
 
   h1:hover {

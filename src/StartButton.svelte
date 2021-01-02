@@ -10,8 +10,7 @@
 
 <style>
   button {
-    --color: #666;
-
+    --color: #9c8a8a;
     color: var(--color);
     background-color: rgb(0 0 0 / 0.7);
     font-size: 4rem;
@@ -22,6 +21,7 @@
     border-radius: 50px;
     background: linear-gradient(145deg, #f0f0f0, #cacaca);
     box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+    text-shadow: 3px 3px 7px #bebebe, -3px -3px 7px #ffffff;
   }
 
   button:hover {
